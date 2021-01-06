@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Upware - software para educación y contenidos virtuales</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- Css -->
+    <link rel='stylesheet' type='text/css' media='screen' href='./resources/css/style.css'>
+    <!-- Quattrocentro font -->
+    <link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Navigation script-->
+    <script>
+        $(document).ready(function () {
+            var body = $("html, body");
+            $(".mobile-menu").click(function () {
+                $(".o-nav").animate({ width: "100%", padding: "2rem 1rem" }, 400);
+                $(".o-nav").data("view", true);
+            });
+
+            $(".close").click(function () {
+                $(".o-nav").animate({ width: "0%", padding: "0rem" }, 400);
+                $(".o-nav").data("view", false);
+            });
+        });
+
+        $(window).resize(function () {
+
+            var ventana = $(window).width();
+            if (ventana > 600) {
+                $(".o-nav").css({ width: "100%", padding: "2rem 1rem" });
+                $(".nav").data("view", false);
+            } else if (ventana < 600) {
+                $(".o-nav").css({ width: "0%", padding: "0rem" });
+                $(".nav").data("view", false);
+            }
+        });
+
+
+    </script>
+    <!-- Slick -->
+    <link rel="stylesheet" type="text/css" href="./resources/js/slick/slick.css" />
+	<link rel="stylesheet" type="text/css" href="./resources/js/slick/slick-theme.css" />
+    <script type="text/javascript" src="./resources/js/slick/slick.min.js"></script>
+    <!-- Slick assignations -->
+    <script>
+        $(document).ready(function () {
+            $('.o-nav-cards').slick({
+                infinite: true,
+                slidesToShow: 5,
+                autoplay:true,
+                speed: 1000,
+                slidesToScroll: 3,
+                responsive: [
+                    {
+                        breakpoint: 1280,
+                        settings: {
+                            slidesToShow: 4,
+                            slidesToScroll: 4
+                        }
+                    },
+                    {
+                        breakpoint: 850,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                        }
+                    }
+                ]
+            });
+
+            $('.o-products-container').slick({
+                infinite: true,
+                slidesToShow: 4,
+                slidesToScroll: 3,
+                responsive: [
+                    {
+                        breakpoint: 1280,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3
+                        }
+                    },
+                    {
+                        breakpoint: 850,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                        }
+                    }
+                ]
+            });
+
+            $('.o-testimony-container').slick({
+                infinite: true,
+                dots: true,
+                autoplay:true,
+                speed: 2000,
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                responsive: [
+                    {
+                        breakpoint: 1280,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 850,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <!--Header-->
+    <header class="o-header">
+        <a class="o-logo-container" href="/index.html"><img class="o-logo" src="./resources/img/Upware.png"></a>
+        <!--Navigation principal-->
+        <nav class="o-nav" data-view=false>
+            <a href="" class="o-nav-item">NUESTRA EMPRESA</a>
+            <a href="" class="o-nav-item">SAC</a>
+            <a href="" class="o-nav-item">DESARROLLOS</a>
+            <a href="" class="o-nav-item">NUESTRA RAZÓN DE SER</a>
+            <a href="" class="o-nav-item">CONTÁCTANOS</a>
+            <span class="material-icons close">close</span>
+            <!--close button when is mobile screen-->
+        </nav>
+
+        <!--Navigation mobile-->
+        <div class="mobile-menu">
+            <span id="menu-hambur" class="material-icons">
+                menu
+            </span>
+        </div>
+        <!--Navigation cards-->
+        <nav class="o-nav-cards">
+            <div class="o-nav-item-card"><img src="./resources/img/nav1.png" alt="">
+                <h3>Jardines infantiles<span class="o-nav-item-card-back"></span></h3>
+            </div>
+            <div class="o-nav-item-card"><img src="./resources/img/nav2.png" alt="">
+                <h3>Colegios<span class="o-nav-item-card-back"></span></h3>
+            </div>
+            <div class="o-nav-item-card"><img src="./resources/img/nav3.png" alt="">
+                <h3>Universidades<span class="o-nav-item-card-back"></span></h3>
+            </div>
+            <div class="o-nav-item-card"><img src="./resources/img/nav4.png" alt="">
+                <h3>Programas deportivos<span class="o-nav-item-card-back"></span></h3>
+            </div>
+            <div class="o-nav-item-card"><img src="./resources/img/nav5.png" alt="">
+                <h3>Caja de compensación<span class="o-nav-item-card-back"></span></h3>
+            </div>
+        </nav>
+    </header>
+
+    <!--Upwaresoft information section-->
+    <section class="o-info-section after">
+        <h1 class="blue">UPware Soft</h1>
+        <h6 class="o-info-about">Upware soft, es una empresa líder en desarrollo de sistemas de información
+            corporativos, creada hace más de 17 años con productos que unifican modular y confiablemente la información,
+            permitiendo centralizar y administrar los datos, para lograr disminuir los riesgos y el tiempo de trabajo.
+            <br><br>Optimizamos la administración y productividad de cualquier tipo de compañía.
+            <br><br>Somos una empresa orientada con el servicio al cliente, comprometida con la misión de desarrollar e
+            implementar soluciones que optimicen la productividad en las instituciones de nuestros clientes...
+        </h6>
+        <input type="button" value="Saber más">
+    </section>
+
+    <!--Upwaresoft products section-->
+    <section class="o-products-section">
+        <h2 class="white">Nuestros productos</h2>
+        <div class="o-products-container">
+            <div class="o-product"><img src="./resources/img/product1.png" alt="">
+                <h3>School pack<span class="o-nav-item-card-back"></span></h3>
+            </div>
+            <div class="o-product"><img src="./resources/img/product2.png" alt="">
+                <h3>Sport architect<span class="o-nav-item-card-back"></span></h3>
+            </div>
+            <div class="o-product"><img src="./resources/img/product3.png" alt="">
+                <h3>Campus pack<span class="o-nav-item-card-back"></span></h3>
+            </div>
+            <div class="o-product"><img src="./resources/img/product4.png" alt="">
+                <h3>School pack web<span class="o-nav-item-card-back"></span></h3>
+            </div>
+            <div class="o-product"><img src="./resources/img/product5.png" alt="">
+                <h3>Learning factory<span class="o-nav-item-card-back"></span></h3>
+            </div>
+        </div>
+    </section>
+
+    <!--Upwaresoft testimony section-->
+    <section class="o-testimony-section">
+        <h2 class="blue">Testimonios</h2>
+        <div class="o-testimony-container">
+            <div class="o-testimony">
+                <div class="o-testimony-image">
+                    <div class="o-testimony-image-container">
+                        <img src="./resources/img/testimony1.png" alt="">
+                    </div>
+                </div>
+                <div class="o-testimony-info">
+                    <h4>Sandra Gómez</h4>
+                    <h5>Jefe de sistemas</h5>
+                    <br><p>
+                        En el Colegio Parroquial San Buenaventura, desde el año 2009, encontramos en UPwareSoft y su producto SchoolPack una solución Integral para el Manejo de la Gestión Académica, y los servicios de apoyo y atención al cliente. 
+                        <br>La claridad de cada modulo, y la versatilidad para trabajar en red cada uno de ellos. <span><a href="" class="blue">ver más...</a></span>
+                    </p>
+                </div>
+            </div>
+            <div class="o-testimony">
+                <div class="o-testimony-image">
+                    <div class="o-testimony-image-container">
+                        <img src="./resources/img/testimony2.png" alt="">
+                    </div>
+                </div>
+                <div class="o-testimony-info">
+                    <h4>Jazmin Torres Mesa</h4>
+                    <h5>Coordinadora de Calidad</h5>
+                    <br><p>
+                        Como Jefe de Sistemas del Colegio La Presentación de Santa Marta, quiero manifestar el alto grado de satisfacción que hay con el Sistema de School Pack ya que su funcionalidad permite coordinar, programar y evaluar nuestro proceso educativo.  
+                        <br>Cuenta además con una gama de servicios o módulos que centralizan los procedimientos, administran las tareas y lo más importante el alto nivel de seguridad sobre la información del sistema. <span><a href="" class="blue">ver más...</a></span>
+                    </p>
+                </div>
+            </div>
+            <div class="o-testimony">
+                <div class="o-testimony-image">
+                    <div class="o-testimony-image-container">
+                        <img src="./resources/img/testimony3.png" alt="">
+                    </div>
+                </div>
+                <div class="o-testimony-info">
+                    <h4>Hernesto Martines</h4>
+                    <h5>Jefe de tecnología</h5>
+                    <br><p>
+                        En el Colegio Parroquial San Joaquín, desde el año 2009, encontramos en UPwareSoft y su producto SchoolPack una solución Integral para el Manejo de la Gestión Académica, y los servicios de apoyo y atención al cliente. 
+                        <br>La claridad de cada modulo, y la versatilidad para trabajar en red cada uno de ellos. <span><a href="" class="blue">ver más...</a></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Upwaresoft important buttons section-->
+    <section class="o-buttons-section">
+        <div class="o-button-container">
+            <div class="o-button">
+                <img src="./resources/img/button1.png" alt="">
+                <h4 class="text-button white">Ingresa a nuestro Sistema de Atención al Cliente aquí</h4>
+            </div>
+            <div class="o-button-circle">
+                <div class="o-button-circle-img">
+                    <img src="./resources/img/button-circle1.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="o-button-container">
+            <div class="o-button">
+                <img src="./resources/img/button2.png" alt="">
+                <h4 class="text-button white">Realiza tus pagos de forma segura aquí</h4>
+            </div>
+            <div class="o-button-circle">
+                <div class="o-button-circle-img">
+                    <img src="./resources/img/button-circle2.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Upwaresoft contact section-->
+    <section class="o-contact-section">
+        <iframe class="o-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1987.7707042556904!2d-74.0610899280593!3d4.848504446767775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f879662bfa60d%3A0x1ea797dd6ee0d605!2sCl.%201%20%235-25%2C%20Ch%C3%ADa%2C%20Cundinamarca!5e0!3m2!1ses-419!2sco!4v1589598465649!5m2!1ses-419!2sco" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <div class="o-contact-info">
+            <h6 class="o-contact-title white">Datos de contacto</h6>
+            <div class="o-contact-item">
+                <div class="o-icon-container"><img src="./resources/img/icon-ubi.png" alt=""></div>
+                <h5 class="white">Calle 1 No.5 - 25 La Balsa, Chía</h5>
+            </div>
+            <div class="o-contact-item">
+                <div class="o-icon-container"><img src="./resources/img/icon-call.png" alt=""></div>
+                <h5 class="white">00571 - 8614387 / 8614367</h5>
+            </div>
+            <div class="o-contact-item">
+                <div class="o-icon-container"><img src="./resources/img/icon-twitter.png" alt=""></div>
+                <h5 class="white">@UpwareSoft</h5>
+            </div>
+            <div class="o-contact-item">
+                <div class="o-icon-container"><img src="./resources/img/icon-fb.png" alt=""></div>
+                <h5 class="white">/Upware-Soft-541159752567311</h5>
+            </div>
+        </div>
+    </section>
+
+    <!--Upwaresoft alliances section-->
+    <section class="o-alliances-section">
+        
+            <img src="./resources/img/logo-1.png" alt="">
+            <img src="./resources/img/logo-2.png" alt="">
+            <img src="./resources/img/logo-3.png" alt="">
+            <img src="./resources/img/logo-4.png" alt="">
+            <img src="./resources/img/logo-5.png" alt="">
+        
+            <img src="./resources/img/logo-6.png" alt="">
+            <img src="./resources/img/logo-7.png" alt="">
+            <img src="./resources/img/logo-8.png" alt="">
+            <img src="./resources/img/logo-9.png" alt="">
+            <img src="./resources/img/logo-10.png" alt="">
+            <img src="./resources/img/logo-11.png" alt="">
+        
+    </section>
+
+    <!--Footer-->
+    <footer class="o-footer">
+        <div class="o-footer-section">
+            <div class="o-footer-nav">
+                <a class="white" href="">> ¿Quiénes somos?</a>
+                <a class="white" href="">> Razón de ser</a>
+                <a class="white" href="">> Alianzas</a>
+            </div>
+            <div class="o-footer-nav">
+                <a class="white" href="">> Mapa del sitio</a>
+                <a class="white" href="">> Términos de uso</a>
+                <a class="white" href="">> Privacidad</a>
+            </div>
+        </div>
+        <a class="o-logo-container" href="/index.html"><img class="o-logo" src="./resources/img/Upware.png"></a>
+        <div class="o-footer-section">
+            <div class="o-footer-nav">
+                <a class="white" href="">> School Pack</a>
+                <a class="white" href="">> Campus Pack</a>
+                <a class="white" href="">> School Web</a>
+            </div>
+            <div class="o-footer-nav">
+                <a class="white" href="">> S.C.I</a>
+                <a class="white" href="">> Sport Architec</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

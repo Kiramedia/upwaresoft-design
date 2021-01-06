@@ -1,0 +1,946 @@
+
+/*general*/
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Quattrocento Sans', sans-serif;
+    transform: perspective(1px) translateZ(0);
+    backface-visibility: hidden;
+    color: var(--text);
+}
+
+:root{
+    --one: #ffffff;
+    --two: #003A70;
+    --three: #0A4A86;
+    --four: #002B53;
+    --five: #EAF4FF;
+    --six: #196cb8;
+    --text: #424242;
+    --text-two: #5D5D5D;
+}
+
+/*Text*/
+h1{
+    font-size: 5rem;
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+    font-size: 2.25rem;
+    padding: 3rem 0 2rem 0;
+}
+
+h4{
+    font-size: 1.9rem;
+    font-weight: normal;
+}
+
+h5{
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+p{
+    font-size: .8rem;
+    color: var(--text-two);
+    text-align: justify;
+}
+
+a{
+    outline: none;
+    text-decoration: none;
+}
+
+.blue{
+    color: var(--two);
+}
+
+.white{
+    color: var(--one);
+}
+
+/*Header*/
+header{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(117.59deg, rgba(0, 58, 112, 0.6) 8.29%, rgba(0, 0, 0, 0.6) 108.47%),
+    url('../img/header.png') no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+header .o-logo-container{
+    height: 10rem;
+    transform: translateY(-8rem);
+}
+
+.o-logo{
+    height: 100%;
+}
+
+.mobile-menu{
+	position: absolute;
+	z-index: 3;
+    top: 0;
+    left: 0;
+	margin: 1rem;
+    display: none;
+}
+
+#menu-hambur{
+    color: var(--one);
+    cursor: pointer;
+}
+
+.o-nav{
+    margin-top: 6rem;
+    transform: translateY(-8rem);
+    display: flex;
+    justify-content: center;
+}
+
+.close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    visibility: hidden;
+    color: var(--one);
+}
+
+.o-nav-item{
+    margin: 0 .25rem;
+    text-decoration: none;
+    padding: .8rem .7rem;
+    color: var(--one);
+    border-radius: .5rem;
+    font-style: normal;
+    font-weight: bold;
+    transition: all .5s;
+    font-size: 1.4rem;
+}
+
+.o-nav-item:hover{
+    background: rgba(0, 0, 0, 0.47);
+}
+
+.o-nav-cards{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.o-nav-item-card{
+    position: relative;
+    cursor: pointer;
+    height: 15rem;
+    width: 22rem;
+    border-radius: .5rem;
+    margin: 0 .5rem;
+    background: var(--one);
+    overflow: hidden;
+}
+
+.o-nav-item-card img{
+    object-fit: cover;
+    transition: all .5s ease;
+}
+
+.o-nav-item-card:hover img{
+    transform: perspective(1px) scale(1.05);
+}
+
+.o-nav-item-card h3{
+    position: absolute;
+    width: 16rem;
+    font-size: 1.2rem;
+    color: var(--one);
+    bottom: 0;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding: .5rem .5rem .5rem 1.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0px 5px 5px 0px;
+}
+
+.o-nav-item-card-back{
+    content: "";
+    position: absolute;
+    background: var(--two);
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: .9rem;
+}
+
+/*info section*/
+.o-info-section{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 40rem;
+    width: 100%;
+}
+
+.o-info-about{
+    margin: 4rem 2rem;
+    text-align: center;
+    font-size: 1.25rem;
+    max-width: 58rem;
+}
+
+.o-info-section::after{
+    content: "";
+    background: url('../img/pattern.png');
+    opacity: 0.06;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1; 
+}
+
+input[type="button"]{
+    background: var(--two);
+    color: var(--one);
+    padding: .5rem 1.5rem;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    transition: all .2s;
+}
+
+input[type="button"]:hover{
+    background: var(--four);
+    font-size: 1.6rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/*products section*/
+.o-products-section{
+    position: relative;
+    height: 30rem;
+    width: 100%;
+    background: linear-gradient(87.75deg, rgba(1, 46, 87, 0.9) 32.86%, rgba(0, 92, 177, 0.9) 79.53%);
+}
+
+.o-products-container{
+    margin: 2rem 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.o-product{
+    height: 15rem;
+    width: 26.75rem;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 1rem;
+}
+
+.o-product img{
+    object-fit: cover;
+    transition: all .2s;
+}
+
+.o-product:hover img{
+    transform: perspective(1px) scale(1.05);
+}
+
+.o-product h3{
+    position: absolute;
+    width: 16rem;
+    font-size: 1.2rem;
+    color: var(--one);
+    bottom: 0;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding: .5rem .5rem .5rem 1.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0px 5px 5px 0px;
+}
+
+/*testimony section*/
+.o-testimony-section{
+    position: relative;
+    height: 29rem;
+    width: 100%;
+}
+
+.o-testimony-section::after{
+    content: "";
+    background: url('../img/pattern.png');
+    opacity: 0.06;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.o-testimony-container{
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.o-testimony{
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0 2rem;
+    width: 50rem;
+}
+
+.o-testimony-image{
+    height: 9.1rem;
+    width: 9.1rem;
+    border-radius: 7rem;
+    padding: .5rem;
+    background: var(--two);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.o-testimony-image-container{
+    height: 100%;
+    width: 100%;
+    border-radius: 7rem;
+    overflow: hidden;
+}
+
+.o-testimony-image-container img{
+    object-fit: cover;
+}
+
+.o-testimony-info{
+    margin-left: 2rem;
+    max-height: 13rem;
+}
+
+/*buttons section*/
+.o-buttons-section{
+    box-shadow: inset 0px 3px 5px rgba(0, 0, 0, .25);
+    position: relative;
+    height: 20rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 2.5rem 5.5rem 2.5rem 2.5rem;
+    justify-content: space-around;
+}
+
+.o-buttons-section::after{
+    content: "";
+    background: url('../img/pattern.png');
+    opacity: 0.03;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.o-button-container{
+    height: 65%;
+    width: 40%;
+    margin: 1.5rem 3.5rem; 
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.o-button{
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(90.8deg, #012E57 4.53%, #005CB1 112.08%);
+    position: relative;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    padding: 0 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.o-button img{
+    height: 100%;
+    width: auto;
+    mix-blend-mode: multiply;
+    filter: blur(1px);
+    position: absolute;
+    left: 0;
+}
+
+.text-button{
+    text-align: center;
+    font-size: 2rem;
+    max-width: 24rem;
+}
+
+.o-button-circle{
+    cursor: pointer;
+    height: 12rem;
+    width: 12rem;
+    padding: .5rem;
+    border-radius: 7rem;
+    background: var(--five);
+    position: absolute;
+    transform: translateX(50%);
+    right: 0;
+    box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.25);
+    transition: all 1s;
+}
+
+.o-button-container:hover .o-button-circle{
+    background: var(--four);
+}
+
+.o-button-circle-img{
+    height: 100%;
+    width: 100%;
+    border-radius: 7rem;
+    overflow: hidden;
+}
+
+.o-button-circle-img img{
+    width: 100%;
+    height: auto;
+}
+
+/*contact section*/
+.o-contact-section{
+    height: 35rem;
+    width: 100%;
+    background: var(--six);
+    display: flex;
+}
+
+.o-map{
+    height: 100%;
+    width: 65%;
+}
+
+.o-contact-info{
+    height: 100%;
+    width: 35%;
+    
+}
+
+.o-contact-title{
+    margin: 10% 0 2.5rem 0;
+    padding: .8rem 0 .8rem 2rem;
+    width: 25rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0px 5px 5px 0px;
+    font-size: 1.75rem;
+}
+
+.o-contact-title::before{
+    content: "";
+    background: var(--two);
+    top: 0;
+    left: 0;
+    width: 1.5rem;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    transform: translateX(-50%);
+}
+
+.o-contact-item{
+    display: flex;
+    align-items: center;
+    padding-left: 2.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.o-icon-container{
+    height: 1.5rem;
+    width: 2.5rem;
+    margin-right: .5rem;
+}
+
+.o-icon-container img{
+    height: 100%;
+    width: auto;
+}
+
+/*alliance section*/
+.o-alliances-section{
+    height: auto;
+    width: 100%;
+    background: var(--three);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+}
+
+.o-alliances-section img{
+    height: 2.5rem;
+    width: auto;
+    margin: .5rem .5rem;
+}
+
+/*footer section*/
+footer{
+    width: 100%;
+    background: var(--four);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+}
+
+footer .o-logo-container{
+    height: 8rem;
+    margin: 2rem;
+}
+
+.o-footer-section{
+    display: flex;
+}
+
+.o-footer-nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50%;
+    width: auto;
+    margin: 2rem 1rem;
+}
+
+.o-footer-nav a{
+    font-size: 1.25rem;
+    margin: .25rem 1rem;
+    transition: all .2s;
+}
+
+.o-footer-nav a:hover{
+    border-bottom: 1px solid var(--one);
+}
+
+/*CSS screens <1280px*/
+@media only screen and (max-width: 1280px) {
+
+    /*text*/
+    h2{
+        font-size: 2.25rem;
+    }
+
+    /*Header*/
+    .o-nav-item{
+        font-size: 1rem;
+    }
+
+    .o-nav-cards{
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 auto;
+        width: 95%;
+    }
+
+    .o-nav-item-card h3{
+        font-size: 1.2rem;
+    }
+
+    /*info section*/
+    h1{
+        font-size: 4rem;
+    }
+
+    .o-info-about{
+        font-size: 1.25rem;
+    }
+
+    input[type="button"]{
+        font-size: 1.4rem;
+    }
+
+    input[type="button"]:hover{
+        font-size: 1.5rem;
+    }
+
+    /*buttons section*/
+    .o-buttons-section{
+        flex-wrap: wrap;
+        height: 30rem;
+    }
+    
+    .o-button-container{
+        height: 35%;
+        width: 70%;
+    }
+
+    .text-button{
+        font-size: 1.5rem;
+    }
+
+    /*contact section*/
+    .o-map{
+        height: 100%;
+        width: 60%;
+    }
+    
+    .o-contact-info{
+        height: 100%;
+        width: 40%;
+    }
+
+    .o-contact-title{
+        font-size: 1.75rem;
+        width: 20rem;
+    }
+
+    /*alliance section*/
+    .o-alliances-section{
+        flex-wrap: wrap;
+    }
+
+    .o-alliances-section img{
+        height: 2rem;
+    }
+
+    /*footer section*/
+    footer{
+        justify-content: center;
+    }
+
+    .o-footer-section{
+        border-bottom: 1px solid var(--one);
+    }
+
+    footer .o-logo-container{
+        order: 1;
+    }
+
+    .o-footer-nav a{
+        font-size: 1rem;
+    }
+}
+
+/*CSS screens <850px*/
+@media only screen and (max-width: 850px) {
+
+    /*text*/
+    h2{
+        font-size: 2rem;
+    }
+
+    h4{
+        font-size: 1.5rem;
+    }
+    
+    h5{
+        font-size: 1.0rem;
+    }
+    
+    p{
+        font-size: .7rem;
+    }
+
+    /*Header*/
+    .o-nav-item{
+        font-size: .75rem;
+    }
+
+    .o-nav-item-card h3{
+        font-size: 1.2rem;
+    }
+
+    .o-nav-cards{
+        width: 85%;
+    }
+
+    /*info section*/
+    h1{
+        font-size: 3.5rem;
+    }
+
+    .o-info-about{
+        font-size: 1.0rem;
+    }
+
+    input[type="button"]{
+        font-size: 1.25rem;
+    }
+
+    input[type="button"]:hover{
+        font-size: 1.35rem;
+    }
+
+    /*products section*/
+    .o-products-section{
+        height: 25rem;
+    }
+
+    .o-product{
+        height: 12rem;
+        overflow: hidden;
+        cursor: pointer;
+        border-radius: 5px;
+        margin: 0 1rem;
+    }
+
+    /*testimony section*/
+    .o-testimony-image{
+        height: 8.1rem;
+        width: 8.1rem;
+    }
+    
+    /*buttons section*/
+    .o-buttons-section{
+        padding: 2.5rem 4.5rem 2.5rem .5rem;
+    }
+
+    .o-button-container{
+        height: 35%;
+        width: 90%;
+        margin: 1.5rem 0;
+    }
+
+    /*contact section*/
+    .o-contact-section{
+        height: 25rem;
+    }
+
+    .o-map{
+        height: 100%;
+        width: 60%;
+    }
+    
+    .o-contact-info{
+        height: 100%;
+        width: 40%;
+    }
+
+    .o-contact-title{
+        font-size: 1.25rem;
+        width: 14rem;
+    }
+
+    .o-contact-item h5{
+        font-size: .8rem;
+    }
+
+    .o-icon-container{
+        height: 1rem;
+        width: 1.5rem;
+    }
+
+    /*alliance section*/
+    .o-alliances-section img{
+        height: 1.5rem;
+    }
+}
+
+/*CSS screens <600px*/
+@media only screen and (max-width: 600px) {
+
+    /*text*/
+    h2{
+        font-size: 1.75rem;
+    }
+
+    h4{
+        font-size: 1.25rem;
+    }
+    
+    h5{
+        font-size: .75rem;
+    }
+    
+    p{
+        font-size: .6rem;
+    }
+
+    /*Header*/
+    header{
+        height: 30rem;
+        justify-content: center;
+    }
+
+    header .o-logo-container{
+        height: 6rem;
+        margin-top: 1rem;
+        transform: translateY(-100%);
+    }
+
+    .mobile-menu{
+        display: block;
+    }
+
+    .close{
+        visibility: visible;
+    }
+
+    .o-nav{
+        position: absolute;
+        margin: 0;
+        transform: none;
+        top: 0;
+        left: 0;
+        padding: 0rem;
+        width: 0%;
+        overflow: hidden;
+
+        flex-direction: column;
+        background: var(--four);
+        z-index: 4;
+    }
+
+    .o-nav-item{
+        font-size: 1rem;
+        padding: .5rem .6rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 0;
+        white-space:nowrap;
+    }
+
+    .o-nav-cards{
+        padding: 1.5rem;
+    }
+
+    .o-nav-item-card{
+        width: 10rem;
+        height: 10rem;
+        background: none;
+    }
+
+    .o-nav-item-card h3{
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    /*info section*/
+    .o-info-section{
+        height: 30rem;
+    }
+
+    h1{
+        font-size: 3rem;
+    }
+
+    .o-info-about{
+        margin: 2rem;
+        font-size: .75rem;
+    }
+
+    input[type="button"]{
+        font-size: 1rem;
+    }
+    
+    input[type="button"]:hover{
+        font-size: 1.1rem;
+    }
+
+    /*products section*/
+    .o-product h3{
+        font-size: 1rem;
+    }
+
+    /*testimony section*/
+    .o-testimony-section{
+        height: 25rem;
+    }
+
+    .o-testimony-image{
+        display: none;
+    }
+
+    .o-testimony{
+        margin: 0 .5rem;
+    }
+
+    .o-testimony-info{
+        margin: 0 .5rem;
+    }
+
+    /*buttons section*/
+    .o-buttons-section{
+        height: 25rem;
+    }
+
+    .o-button-container{
+        height: 30%;
+    }
+
+    .o-button-circle{
+        height: 7rem;
+        width: 7rem;
+    }
+
+    .o-button{
+        padding: 0 4rem 0 .5rem;
+    }
+
+    .text-button{
+        font-size: .9rem;
+    }
+
+    /*contact section*/
+    .o-contact-section{
+        height: 37rem;
+        flex-wrap: wrap;
+    }
+
+    .o-map{
+        height: 50%;
+        width: 100%;
+    }
+    
+    .o-contact-info{
+        height: 50%;
+        width: 100%;
+    }
+
+    .o-contact-title{
+        margin: 2rem 0 2rem 0;
+        width: 16rem;
+    }
+
+    /*alliance section*/
+    .o-alliances-section{
+        flex-wrap: wrap;
+    }
+
+    .o-alliances-section img{
+        height: 1rem;
+    }
+
+    /*footer section*/
+    footer{
+        flex-direction: column;
+        padding: .5rem;
+    }
+
+    footer .o-logo-container{
+        height: 4rem;
+    }
+    
+    .o-footer-nav a{
+        font-size: .75rem;
+    }
+}
